@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  BasicMovist
-//
-//  Created by mariemik on 03/03/22.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -36,7 +29,6 @@ class ViewController: UIViewController {
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
     }
     
     private func setupTableView() {
@@ -72,4 +64,3 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
 }
-

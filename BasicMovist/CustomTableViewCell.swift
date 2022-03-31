@@ -1,10 +1,3 @@
-//
-//  CustomTableViewCell.swift
-//  BasicMovist
-//
-//  Created by mariemik on 31/03/22.
-//
-
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
@@ -18,8 +11,4 @@ class CustomTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    
-
 }

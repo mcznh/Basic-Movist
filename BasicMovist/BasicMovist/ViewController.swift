@@ -1,27 +1,17 @@
-//
-//  ViewController.swift
-//  BasicMovist
-//
-//  Created by mariemik on 03/03/22.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
-    let chocolates: [String] = ["amargo", "preto", "ao leite", "granulado", "granulado"]
+    let movies: [String] = ["Sonho de Liberdade", "Massacre da Serra Elétrica", "Casa de Cera", "Jogos Mortais", "Grinch"]
     let tableView = UITableView()
     let titleLabel = UILabel()
+    private let customCellReuseIdentifier = "customCellReuseIdentifier"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        view.backgroundColor = .red
+          
         setupConstraints()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
-        tableView.dataSource = self
-        tableView.delegate = self
-        titleLabel.text = "Suko de frutinha"
-        titleLabel.textAlignment = .center
+        setupTableView()
+        setupView()
     }
     
     func setupConstraints () {
@@ -39,8 +29,19 @@ class ViewController: UIViewController {
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
     }
+    
+    private func setupTableView() {
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: customCellReuseIdentifier)
+        tableView.dataSource = self
+        titleLabel.text = "Filmes"
+        titleLabel.textAlignment = .center
+    }
+    
+    private func setupView() {
+        view.backgroundColor = .white
+    }
+    
     // tableView: adicionar uma tableview na tela (dentroda view da viewcontroller)
     // fazer constraints da tableview
     // adicionar células
@@ -52,12 +53,14 @@ class ViewController: UIViewController {
 // MARK: - TableViewDataSource
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chocolates.count
+        return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        cell.textLabel?.text = chocolates[indexPath.row]
+        
+        guard let cell =  tableView.dequeueReusableCell(withIdentifier: customCellReuseIdentifier, for: indexPath) as? CustomTableViewCell else {
+            return UITableViewCell()
+        }
         return cell
     }
 }

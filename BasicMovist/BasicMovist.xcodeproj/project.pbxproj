@@ -15,6 +15,7 @@
 		7158FC0027D13CAF00F873F8 /* BasicMovistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7158FBFF27D13CAF00F873F8 /* BasicMovistTests.swift */; };
 		7158FC0A27D13CAF00F873F8 /* BasicMovistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7158FC0927D13CAF00F873F8 /* BasicMovistUITests.swift */; };
 		7158FC0C27D13CAF00F873F8 /* BasicMovistUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7158FC0B27D13CAF00F873F8 /* BasicMovistUITestsLaunchTests.swift */; };
+		719510DF27F5F0BD004007B4 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719510DE27F5F0BD004007B4 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		7158FC0527D13CAF00F873F8 /* BasicMovistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicMovistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7158FC0927D13CAF00F873F8 /* BasicMovistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMovistUITests.swift; sourceTree = "<group>"; };
 		7158FC0B27D13CAF00F873F8 /* BasicMovistUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMovistUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		719510DE27F5F0BD004007B4 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				7158FBE727D13CAB00F873F8 /* BasicMovist */,
+				719510DE27F5F0BD004007B4 /* CustomTableViewCell.swift */,
 				7158FBFE27D13CAF00F873F8 /* BasicMovistTests */,
 				7158FC0827D13CAF00F873F8 /* BasicMovistUITests */,
 				7158FBE627D13CAB00F873F8 /* Products */,
@@ -256,6 +259,7 @@
 			files = (
 				7158FBED27D13CAB00F873F8 /* ViewController.swift in Sources */,
 				7158FBE927D13CAB00F873F8 /* AppDelegate.swift in Sources */,
+				719510DF27F5F0BD004007B4 /* CustomTableViewCell.swift in Sources */,
 				7158FBEB27D13CAB00F873F8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

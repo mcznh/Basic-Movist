@@ -1,14 +1,11 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        backgroundColor = .blue
-    }
+    let movieYearLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: 45))
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func setupCell(movieName: String, movieYear: String) {
+        textLabel?.text = movieName
+        movieYearLabel.text = movieYear
+        accessoryView = movieYearLabel
     }
 }

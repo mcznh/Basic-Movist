@@ -41,14 +41,18 @@ class ViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = .white
     }
-    
-    // tableView: adicionar uma tableview na tela (dentroda view da viewcontroller)
-    // fazer constraints da tableview
-    // adicionar células
-    // UITitle ;  em tal lugar; se chama tal; tal cor; tal letra; posição da letra;
-    // UIFilmes
-    // UIButton ; em tal lugar; se chama tal; tal cor; tal letra; posição da letra;
 }
+
+//      Etapas do Projeto
+// tableView: adicionar uma tableview na tela (dentro da view da viewcontroller)
+// fazer constraints da tableview
+// adicionar células
+// criar uma Accessory view para a célula, onde será apresentado o ano de lançamento do filme.
+// 
+
+
+// get JSON data into object for display
+// Decode JSON Data String to Swift Objects
 
 // MARK: - TableViewDataSource
 extension ViewController: UITableViewDataSource {
@@ -57,10 +61,10 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell =  tableView.dequeueReusableCell(withIdentifier: customCellReuseIdentifier, for: indexPath) as? CustomTableViewCell else {
             return UITableViewCell()
         }
+        cell.setupCell(movieName: movies[indexPath.row], movieYear: "666")
         return cell
     }
 }

@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  BasicMovist
-//
-//  Created by mariemik on 03/03/22.
-//
-
 import UIKit
 
 @main

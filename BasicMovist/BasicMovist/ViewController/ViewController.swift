@@ -4,6 +4,7 @@ class ViewController: UIViewController {
     let movies: [String] = ["Sonho de Liberdade", "Massacre da Serra Elétrica", "Casa de Cera", "Jogos Mortais", "Grinch"]
     let tableView = UITableView()
     let titleLabel = UILabel()
+    let dataFetcher = DataFetcher()
     private let customCellReuseIdentifier = "customCellReuseIdentifier"
     
     override func viewDidLoad() {
@@ -12,6 +13,27 @@ class ViewController: UIViewController {
         setupConstraints()
         setupTableView()
         setupView()
+        let url = URL(string: "https://api.themoviedb.org/3/movie/top_rated?api_key=a5118347845dac95fe25547db67bf900&language=en-US&page=1")
+        if let url = url {
+            dataFetcher.fetchData(from: url) { result in
+                // handle the results
+                switch result {
+                case .success(let data):
+                    // handle(data)
+                    let movies = try? JSONDecoder().decode(MovieResponse.self, from: data)
+                    if let movies = movies {
+                        print(movies)
+                    } else {
+                        print("n deu certo o decode 🤪🤪🤪🤪")
+                    }
+                case .failure(let error):
+                    // handle(error)
+                    print("IHHHHH RAPAIZ KKKKKKKK")
+                }
+            }
+        } else {
+            print("kkkkkkkkkkk")
+        }
     }
     
     func setupConstraints () {

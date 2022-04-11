@@ -1,3 +1,5 @@
-struct MovieResponse {
+struct MovieResponse: Decodable {
     let results: [MovieModel]
 }
+
+
